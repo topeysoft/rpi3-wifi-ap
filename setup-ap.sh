@@ -73,7 +73,7 @@ EOF
 # sed -i -- 's/    wpa-conf \/etc\/wpa_supplicant\/wpa_supplicant.conf//g' /etc/network/interfaces
 
 
-cat >> /usr/local/bin/hostapdstart <<EOF
+cat > /usr/local/bin/hostapdstart <<EOF
 #!/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 iw dev wlan0 interface add uap0 type __ap
@@ -86,7 +86,7 @@ EOF
 
 chmod 775 /usr/local/bin/hostapdstart
 
-cat >> /etc/network/interfaces <<EOF
+cat > /etc/network/interfaces <<EOF
 source-directory /etc/network/interfaces.d
 
 auto lo
