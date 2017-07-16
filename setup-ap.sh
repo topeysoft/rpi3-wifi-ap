@@ -111,6 +111,7 @@ iface uap0 inet static
 EOF
 
 
+
 #Uncomment #DAEMON_CONF="
 sed -i -- 's/#DAEMON_CONF="/DAEMON_CONF="/g' /etc/sysctl.conf
 #Change value of DAEMON_CONF to "/etc/hostapd/hostapd.conf" if not already that
@@ -120,7 +121,7 @@ sed -i -- 's/DAEMON_CONF=""/DAEMON_CONF="/etc/hostapd/hostapd.conf"/g' /etc/sysc
 #Remove /bin/bash /usr/local/bin/hostapdstart if already exists"
 sed -i -- 's:/bin/bash /usr/local/bin/hostapdstart::g' /etc/rc.local
 #Add "/bin/bash /usr/local/bin/hostapdstart" right before exit 0
-sed -i -- 's: exit 0 :/bin/bash /usr/local/bin/hostapdstart /etc/hostapd/hostapd.conf \n  exit 0 :g' /etc/rc.local
+sed -i -- 's: exit 0 :/bin/bash /usr/local/bin/hostapdstart \n  exit 0 :g' /etc/rc.local
 
 
 # echo "denyinterfaces wlan0" >> /etc/dhcpcd.conf
