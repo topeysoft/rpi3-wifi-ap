@@ -12,6 +12,7 @@ if [ $# -eq 1 ]; then
     ADAPTER="$1"
 fi
 
+
 #Uncomment net.ipv4.ip_forward
 sed -i -- 's/#net.ipv4.ip_forward/net.ipv4.ip_forward/g' /etc/sysctl.conf
 #Change value of net.ipv4.ip_forward if not already 1
